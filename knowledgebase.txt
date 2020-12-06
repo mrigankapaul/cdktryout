@@ -1,0 +1,35 @@
+Source(cdk application) -> cdk cli(Compiles) -> AWS CloudFormation Template(Assembly language) -> AWS Cloud Formation
+                        Execute             Compiler            Assembly language           Processor
+
+python3 --version
+pip3 --version
+
+
+Prerequisite for cdk using python -
+
+python3 -m ensurepip --upgrade
+python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade virtualenv
+npm install -g aws-cdk (// local install does not work)
+cdk --version
+pip3 install --upgrade aws-cdk.core
+
+
+--- 
+cdk init app --language python // creates the initial scafolding for cdk in the specified language
+source .venv/bin/activate // Activate the virtual environent
+pip3 install aws_cdk.core // install cdk core packages
+pip3 install --upgrade pip // upgrade pip
+write the deployment component in requirements.txt // 
+-e .
+aws-cdk.core
+aws-cdk.aws_s3
+
+
+pip3 install -r requirements.txt //install the dependent component 
+cdk ls // to check if there are no compile time error and project is good.
+// In cdk.out there is a file created my-first-cdk-project.template.json which has the cloud formation template for s3 bucket
+cdk synth
+cdk  bootstrap // creating cloudformation changeset - bootstrap the temp s3 bucket and CF template.
+// modified the .gitignore
+

@@ -8,6 +8,9 @@ class MyArtifactBucketStack(core.Stack):
 
         # The code that defines your stack goes here
 
+        # to refer from cdk.json
+        print(self.node.try_get_context('us')['account'])
+
         if is_prod:
             artifactBucket = _s3.Bucket(
                 self, 
@@ -19,5 +22,6 @@ class MyArtifactBucketStack(core.Stack):
         else: 
             artifactBucket = _s3.Bucket(
                 self,
-                "myDevArtifactBucketId"
+                "myDevArtifactBucketId",
+                removal_policy=core.RemovalPolicy.DESTROY
             )

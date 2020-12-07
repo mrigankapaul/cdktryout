@@ -4,6 +4,15 @@
     "@aws-cdk/core:enableStackNameDuplicates": "true",
     "aws-cdk:enableDiffNoFail": "true",
     "@aws-cdk/core:stackRelativeExports": "true",
-    "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": true
+    "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": true,
+    "default": {
+      "region":"ca-central-1",
+      "account":"151817866775",
+      "encryption": true
+    },
+    "us":{
+      "region":"us-east-1",
+      "account":"866314556986"
+    }
   }
 }

@@ -8,6 +8,7 @@
     "default": {
       "region":"ca-central-1",
       "account":"151817866775",
+      "kms_arn": "arn:aws:kms:ca-central-1:151817866775:key/92c8512f-1e88-407d-be70-ee3829d6d6ca",
       "encryption": true
     },
     "us":{
